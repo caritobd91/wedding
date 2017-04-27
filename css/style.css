@@ -9,16 +9,22 @@ h1 {
 	text-shadow: 2px 2px 4px #000000 ;
 	font-size: 580%;
 	font-family: 'Dancing Script', cursive;
+	padding-bottom: 2px;
+	margin-bottom: 2px;
 
 }
 
 p {
 	color: #FFFFFF;
-	text-align: center;
+	text-align: left;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 130%;
+	padding: 400px 0 0 20px;
 }
 
 #navlist {
-	background-color: rgba(12,16,40,0.85);
+	background-color: rgba(37,44,48,0.8);
 	margin: 0;
     top: 0;
     text-align: center;
@@ -41,6 +47,20 @@ p {
 }
 
 #navlist li:hover {
-	background-color: rgba(54,67,142,0.9);
+	background-color: rgb(120,131,140);
 }
 
+.form {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	width: 500px;
+	background: rgba(255,255,255,0.7);
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	padding: 30px;
+	margin: 100px auto;
+}
+.form h2{
+	background: #4D4D4D;
+	color: white;
+	text-align: center;
+}
