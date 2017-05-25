@@ -16,7 +16,7 @@ echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    echo ($row['CategoryName'] . " " . $row['ProductName'] . PHP_EOL);
+    echo ($row['FirstName'] . " " . $row['LastName'] . " " . $row['HasGuest'] . PHP_EOL);
 }
 sqlsrv_free_stmt($getResults);
 ?>
