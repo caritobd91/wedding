@@ -14,8 +14,13 @@ $tsql= "SELECT TOP 20 [FirstName],[LastName],[IsComing],[HasGuest]
 $getResults= sqlsrv_query($conn, $tsql);
 echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE) {
-    echo ("Error getting SQL results: " . sqlsrv_errors());
-    echo ($getResults);
+    if( ($errors = sqlsrv_errors() ) != null) {
+        foreach( $errors as $error ) {
+            echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+            echo "code: ".$error[ 'code']."<br />";
+            echo "message: ".$error[ 'message']."<br />";
+        }
+    }
 }
 else {
     echo ("First Name" . " " . "Last Name" . " " . "Has A Guest Coming" . PHP_EOL);
