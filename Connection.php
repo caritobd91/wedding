@@ -1,9 +1,9 @@
 <?php
-$serverName = SQLAZURECONNSTR_serverName;
+$serverName = getenv("QLAZURECONNSTR_serverName");
 echo ("Server Name: " . $serverName . "<br />");
-$Uid = SQLAZURECONNSTR_UID;
+$Uid = getenv("SQLAZURECONNSTR_UID");
 echo ("UID: " . $Uid . "<br />");
-$Password = SQLAZURECONNSTR_password;
+$Password = getenv("SQLAZURECONNSTR_password");
 $connectionOptions = array(
     "Database" => "Wedding",
     "Uid" => $Uid,
