@@ -1,6 +1,8 @@
 <?php
 $serverName = SQLAZURECONNSTR_serverName;
+echo ("Server Name: " . $serverName . "<br />");
 $Uid = SQLAZURECONNSTR_UID;
+echo ("UID: " . $Uid . "<br />");
 $Password = SQLAZURECONNSTR_password;
 $connectionOptions = array(
     "Database" => "Wedding",
@@ -9,11 +11,11 @@ $connectionOptions = array(
 );
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-echo ("Connection: " . $conn);
+echo ("Connection: " . $conn . "<br />");
 $tsql= "SELECT * [FirstName],[LastName],[IsComing],[HasGuest] FROM [dbo].[Attendee]";
-echo ("TSQL: " . $tsql);
+echo ("TSQL: " . $tsql . "<br />");
 $getResults= sqlsrv_query($conn, $tsql);
-echo ("Reading data from table" . PHP_EOL);
+echo ("Reading data from table" . "<br />");
 if ($getResults == FALSE) {
     if( ($errors = sqlsrv_errors() ) != null) {
         foreach( $errors as $error ) {
@@ -24,10 +26,10 @@ if ($getResults == FALSE) {
     }
 }
 else {
-    echo ("First Name" . " " . "Last Name" . " " . "Has A Guest Coming" . PHP_EOL);
+    echo ("First Name" . " " . "Last Name" . " " . "Has A Guest Coming" . "<br />");
 }
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    echo ($row['FirstName'] . " " . $row['LastName'] . " " . $row['HasGuest'] . PHP_EOL);
+    echo ($row['FirstName'] . " " . $row['LastName'] . " " . $row['HasGuest'] . "<br />");
 }
 sqlsrv_free_stmt($getResults);
 ?>
