@@ -14,7 +14,10 @@ $tsql= "SELECT TOP 20 at.FirstName as FirstName, at.LastName as LastName, at.Has
 $getResults= sqlsrv_query($conn, $tsql);
 echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
-    echo (sqlsrv_errors());
+    echo ("Error getting SQL results: " . sqlsrv_errors());
+else {
+    echo ("First Name" . " " . "Last Name" . " " . "Has A Guest Coming" . PHP_EOL);
+}
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     echo ($row['FirstName'] . " " . $row['LastName'] . " " . $row['HasGuest'] . PHP_EOL);
 }
