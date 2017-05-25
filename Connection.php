@@ -9,7 +9,9 @@ $connectionOptions = array(
 );
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
+echo ("Connection: " . $conn);
 $tsql= "SELECT * [FirstName],[LastName],[IsComing],[HasGuest] FROM [dbo].[Attendee]";
+echo ("TSQL: " . $tsql);
 $getResults= sqlsrv_query($conn, $tsql);
 echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE) {
