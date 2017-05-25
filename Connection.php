@@ -9,12 +9,14 @@ $connectionOptions = array(
 );
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-$tsql= "SELECT TOP 20 at.FirstName as FirstName, at.LastName as LastName, at.HasGuest as HasGuest
+$tsql= "SELECT TOP 20 [FirstName],[LastName],[IsComing],[HasGuest]
         FROM [dbo].[Attendee]";
 $getResults= sqlsrv_query($conn, $tsql);
 echo ("Reading data from table" . PHP_EOL);
-if ($getResults == FALSE)
+if ($getResults == FALSE) {
     echo ("Error getting SQL results: " . sqlsrv_errors());
+    echo ($getResults);
+}
 else {
     echo ("First Name" . " " . "Last Name" . " " . "Has A Guest Coming" . PHP_EOL);
 }
