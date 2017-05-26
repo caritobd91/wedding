@@ -1,5 +1,5 @@
 <?php
-$serverName = getenv("QLAZURECONNSTR_serverName");
+$serverName = getenv("SQLAZURECONNSTR_serverName");
 echo ("Server Name: " . $serverName . "<br />");
 $Uid = getenv("SQLAZURECONNSTR_UID");
 echo ("UID: " . $Uid . "<br />");
