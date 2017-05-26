@@ -1,16 +1,17 @@
 <?php
-$serverName = getenv("SQLAZURECONNSTR_serverName");
-echo ("Server Name: " . $serverName . "<br />");
-$Uid = getenv("SQLAZURECONNSTR_UID");
-echo ("UID: " . $Uid . "<br />");
-$Password = getenv("SQLAZURECONNSTR_password");
-$connectionOptions = array(
+$host = getenv("SQLAZURECONNSTR_serverName");
+echo ("Host: " . $host . "<br />");
+$user = getenv("SQLAZURECONNSTR_UID");
+echo ("User: " . $user . "<br />");
+$pwd = getenv("SQLAZURECONNSTR_password");
+$db = "Wedding";
+/*$connectionOptions = array(
     "Database" => "Wedding",
     "Uid" => $Uid,
     "PWD" => $Password
-);
+);*/
 //Establishes the connection
-$conn = sqlsrv_connect($serverName, $connectionOptions);
+/*$conn = sqlsrv_connect($serverName, $connectionOptions);
 echo ("Connection: " . $conn . "<br />");
 $tsql= "SELECT * [FirstName],[LastName],[IsComing],[HasGuest] FROM [dbo].[Attendee]";
 echo ("TSQL: " . $tsql . "<br />");
@@ -28,7 +29,15 @@ if ($getResults == FALSE) {
 }
 else {
     echo ("First Name" . " " . "Last Name" . " " . "Has A Guest Coming" . "<br />");
-}
+}*/
+ try {
+     $conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
+     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+ }
+ catch(Exception $e){
+     die(var_dump($e));
+ }
+
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     echo ($row['FirstName'] . " " . $row['LastName'] . " " . $row['HasGuest'] . "<br />");
 }
