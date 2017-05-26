@@ -23,6 +23,7 @@ if ($getResults == FALSE) {
             echo "code: ".$error[ 'code']."<br />";
             echo "message: ".$error[ 'message']."<br />";
         }
+       echo "errors: "; print_r( sqlsrv_errors(), true);
     }
 }
 else {
