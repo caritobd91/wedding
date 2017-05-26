@@ -1,6 +1,8 @@
 <?php
 $host = getenv("SQLAZURECONNSTR_serverName");
+echo ("Host: " . $host . "<br />");
 $user = getenv("SQLAZURECONNSTR_UID");
+echo ("User: " . $user . "<br />");
 $pwd = getenv("SQLAZURECONNSTR_password");
 $db = "Wedding";
 /*$connectionOptions = array(
