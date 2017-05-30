@@ -1,5 +1,6 @@
 <?php
 /* SQL Connection */
+/*
 $host = getenv("SQLAZURECONNSTR_serverName");
 $user = getenv("SQLAZURECONNSTR_UID");
 $pwd = getenv("SQLAZURECONNSTR_password");
@@ -11,12 +12,12 @@ try {
 }
 catch(Exception $e){
     die(var_dump($e));
-}
+}*/
 /* SQL Connection */
 
  if(!empty($_POST)) {
  try {
-     $firstName = $_POST['FirstName'];
+     /*$firstName = $_POST['FirstName'];
      $lastName = $_POST['LastName'];
      $isComing = ($_POST['RSVP'] == 'Yes' ? 1 : 0);
      $message = $_POST['Message'];
@@ -28,7 +29,7 @@ catch(Exception $e){
      $stmt->bindValue(2, $lastName);
      $stmt->bindValue(3, $isComing);
      $stmt->bindValue(4, $message);
-     $stmt->execute();
+     $stmt->execute();*/
 
      echo "First: $firstName </br>";
      echo "Last: $lastName </br>";
