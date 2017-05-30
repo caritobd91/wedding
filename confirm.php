@@ -1,11 +1,11 @@
 <?php
  if(!empty($_POST)) {
  try {
-     $firstName = $_POST['firstName'];
-     $lasttName = $_POST['lastName'];
-     $email = $_POST['email'];
+     $firstName = $_POST['FirstName'];
+     $lasttName = $_POST['LastName'];
+     $email = $_POST['Email'];
      $isComing = $_POST['RSVP'];
-     $message = $_POST['message'];
+     $message = $_POST['Message'];
      // Insert data
      /*$sql_insert = "INSERT INTO registration_tbl (name, email, date) 
                     VALUES (?,?,?)";
@@ -15,15 +15,15 @@
      $stmt->bindValue(3, $date);
      $stmt->execute();*/
 
-     echo "First: $firstName";
-     echo "Last: $lastName";
-     echo "Email: $email";
-     echo "Coming?: $isComing";
-     echo "Comments: $message";
+     echo "First: $firstName </br>";
+     echo "Last: $lastName </br>";
+     echo "Email: $email </br>";
+     echo "Coming?: $isComing </br>";
+     echo "Comments: $message </br>";
  }
  catch(Exception $e) {
      die(var_dump($e));
  }
- echo "<h3>Your're registered!</h3>";
+ echo "<h3>Thanks for Confirming!</h3>";
  }
 ?>
