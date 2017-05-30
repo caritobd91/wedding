@@ -31,12 +31,15 @@
 
             <div class="form">
   				<h2>RSVP</h2>
-  					<form>
-    					<input type="text" name="field1" placeholder="Full Name" />
-   					 	<input type="email" name="field2" placeholder="Email" />
-   					 	<input type="text" name="field3" placeholder="Are you coming?" />
-    					<textarea placeholder="Leave us a message" onkeyup="adjust_textarea(this)"></textarea>
-   					 	<input type="button" value="Send Message" />
+  					<form action="/confirm.php">
+    					<input type="text" name="FirstName" placeholder="First Name" />
+    					<input type="text" name="LastName" placeholder="Last Name" />
+   					 	<input type="email" name="Email" placeholder="Email" />
+   					 	<label for="RSVP">Are you coming?</label>
+   					 	<input type="radio" name="RSVP" value="Yes" />
+   					 	<input type="radio" name="RSVP" value="No" />
+    					<textarea placeholder="Leave us a message"></textarea>
+   					 	<input type="submit" value="Send Message" />
  					 </form>
 			</div>
 
