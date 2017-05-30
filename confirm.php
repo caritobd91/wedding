@@ -18,7 +18,7 @@ catch(Exception $e){
  try {
      $firstName = $_POST['FirstName'];
      $lastName = $_POST['LastName'];
-     $isComing = $_POST['RSVP'];
+     $isComing = ($_POST['RSVP'] == 'Yes' ? 1 : 0);
      $message = $_POST['Message'];
      // Insert data
      $sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message) 
