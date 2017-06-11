@@ -22,11 +22,10 @@
 	<div id="navcontainer">
 
             <ul id="navlist">
-                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="rsvp.html">RSVP</a></li>
                 <li><a href="directions.html">Directions</a></li>
                 <li><a href="registry.html">Registry</a></li>
-                <li><a href="info.html">Information</a></li>
             </ul>
 
             <div class="form">
@@ -34,10 +33,16 @@
   					<form action="./confirm.php" method="POST">
     					<input type="text" name="FirstName" placeholder="First Name" required />
     					<input type="text" name="LastName" placeholder="Last Name" required />
-   					 	<label for="RSVP">Are you coming?</label>
-   					 	<input type="radio" name="RSVP" value="Yes" />
-   					 	<input type="radio" name="RSVP" value="No" />
-    					<textarea name="Message" placeholder="Leave us a message"></textarea>
+   					 	<label for="RSVP">Will you be attending?</label>
+                        <br/>                        
+                        <div class="radio-buttons">
+                            <input type="radio" name="RSVP" value="Yes" />
+                            <label for="RSVP">Yes, I will be attending.</label>
+                            <br/>                        
+                            <input type="radio" name="RSVP" value="No" />
+                            <label for="RSVP">No, I will not be attending.</label>
+                        </div>
+    					<textarea id="rsvp-message" name="Message" placeholder="Leave us a message"></textarea>
    					 	<input type="submit" value="Send Message" />
  					 </form>
 			</div>

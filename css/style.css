@@ -1,32 +1,37 @@
 html {
-	height: 100%;
-	background: url("../img/bkg_image.jpg");
+	background: url("../img/bkg_image.jpg") no-repeat 10% 10% fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 }
 
 h1 {
 	color: #FFFFFF;
 	text-align: center;
 	text-shadow: 2px 2px 4px #000000 ;
-	font-size: 580%;
+	font-size: 550%;
 	font-family: 'Dancing Script', cursive;
-	padding-bottom: 2px;
-	margin-bottom: 2px;
-
+	padding-bottom: 0px;
+	margin-bottom: 0px;
 }
 
 p {
 	color: #FFFFFF;
-	text-align: left;
-	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	font-family: 'Dancing Script', cursive;
 	font-weight: 600;
-	font-size: 130%;
-	padding: 400px 0 0 20px;
+	font-size: 190%;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.7);
+	padding: 0px;
+	margin: 0px;
 }
 
 #navlist {
 	background-color: rgba(37,44,48,0.8);
 	margin: 0;
     top: 0;
+    margin-bottom: 5px;
     text-align: center;
     width: 100%;
     position: fixed;
@@ -48,6 +53,11 @@ p {
 
 #navlist li:hover {
 	background-color: rgb(120,131,140);
+}
+
+.headlines {
+	margin-top: 5px;
+	padding-top: 0px;
 }
 
 .form {
@@ -84,5 +94,49 @@ p {
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
 	padding: 30px;
 	margin: 100px auto;
+	font-weight: 600;
+  	}
 
+  	.directions h1 {
+  	font-family: 'Open Sans', sans-serif;
+  	text-shadow: none;
+  	color: rgb(37,44,48);
+  	font-size: 150%;
+  	text-align: left;
+  	}
+	.directions p {
+	font-family: 'Open Sans', sans-serif;
+  	text-shadow: none;
+  	color: rgb(37,44,48);
+  	font-size: 100%;
+  	text-align: left;
+	}
+	.registrycontent {
+	width: 500px;
+  	background: rgba(255,255,255,0.7);
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	padding: 30px;
+	margin: 100px auto;
+	font-weight: 600;
+}
+.registrycontent h1{
+	font-family: 'Open Sans', sans-serif;
+  	text-shadow: none;
+  	color: rgb(37,44,48);
+  	font-size: 150%;
+  	text-align: left;
+}
+.registrycontent p {
+	font-family: 'Open Sans', sans-serif;
+  	text-shadow: none;
+  	color: rgb(37,44,48);
+  	font-size: 100%;
+  	text-align: left;
+}
+  .radio-buttons {
+  	margin-left: 10px;
+  	}
+
+  #rsvp-message {
+  	margin-top: 15px;
   }
