@@ -28,7 +28,7 @@ catch(Exception $e){
      $stmt->bindValue(':firstName', $firstName);
      $stmt->bindValue(':lastName', $lastName);
      $stmt->execute();
-     $count = $stmt->rowCount();
+     $count = count($stmt->fetchAll());
     $result = $stmt -> fetch(PDO::FETCH_ASSOC);
     print("Found $count rows.");
     print_r($result);
