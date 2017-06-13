@@ -17,10 +17,13 @@ catch(Exception $e){
 
  if(!empty($_POST)) {
  try {
+     error_log( "Hello, errors!" );
      $firstName = $_POST['FirstName'];
      $lastName = $_POST['LastName'];
      $isComing = ($_POST['RSVP'] == 'Yes' ? 1 : 0);
      $message = $_POST['Message'];
+     echo "$conn";
+
      // Insert data
      $sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message) 
                     VALUES (_firstName, _lastName, _isComing, _message)";
