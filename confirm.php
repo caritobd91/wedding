@@ -28,9 +28,9 @@ catch(Exception $e){
      $stmt->bindValue(':firstName', $firstName);
      $stmt->bindValue(':lastName', $lastName);
      $stmt->execute();
-     echo $stmt->rowCount();
+     $count = $stmt->rowCount();
     $result = $stmt -> fetch(PDO::FETCH_ASSOC);
-    $previousDate = $result['dateRegistered'];
+    print("Found $count rows.");
     print_r($result);
 
     /*if(!($stmt->rowCount() > 0))
