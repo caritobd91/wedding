@@ -30,7 +30,7 @@ catch(Exception $e){
      $stmt->bindValue('_isComing', $isComing);
      $stmt->bindValue('_message', $message);
      echo "STMT: $stmt";
-     /*$stmt->execute();*/
+     $stmt->execute();
 
      echo "First: $firstName </br>";
      echo "Last: $lastName </br>";
