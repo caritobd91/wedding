@@ -17,13 +17,10 @@ catch(Exception $e){
 
  if(!empty($_POST)) {
  try {
-
-     //date_default_timezone_set('UTC');
      $firstName = $_POST['FirstName'];
      $lastName = $_POST['LastName'];
      $isComing = ($_POST['RSVP'] == 'Yes' ? 1 : 0);
      $message = $_POST['Message'];
-     $dateRegistered = date('m/d/Y');
      // Insert data
      $sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message) 
                     VALUES (?,?,?,?)";
@@ -38,7 +35,6 @@ catch(Exception $e){
      echo "Last: $lastName </br>";
      echo "Coming?: $isComing </br>";
      echo "Comments: $message </br>";
-     echo "Date Registered: $dateRegistered </br>";
  }
  catch(Exception $e) {
      die(var_dump($e));
