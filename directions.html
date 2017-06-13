@@ -33,15 +33,43 @@
         <h1>Service</h1>
         <p>The ceremony will be held at St. Albert The Great at 3:30p.m.</p>
         <p>1395 Girard Dr, Louisville, KY 40222</p>
+        <div id="church-map" class="map"></div>
         </br>
         <h1>Reception</h1>
         <p>The reception will be held at the BBC Loft downtown at 6p.m.</p>
         <p>300 W Main St, Louisville, KY 40202</p>
+        <div id="reception-map" class="map"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      function initMap() {
+        var church = {lat: 38.271229, lng: -85.620823};
+        var reception = {lat: 38.256201, lng: -85.755074};
+        var chuchMap = new google.maps.Map(document.getElementById('church-map'), {
+          zoom: 4,
+          center: church
+        });
+        var receptionMap = new google.maps.Map(document.getElementById('reception-map'), {
+          zoom: 4,
+          center: reception
+        });
+        var chuchMarker = new google.maps.Marker({
+          position: church,
+          map: chuchMap
+        });
+        var receptionMarker = new google.maps.Marker({
+          position: reception,
+          map: receptionMap
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsemnn4eEojIB1IeJFqLry1DMdc9xZvNs&callback=initMap">
+    </script>
     </body>
 </html>
