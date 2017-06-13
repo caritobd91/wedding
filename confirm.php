@@ -28,12 +28,13 @@ catch(Exception $e){
      $sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message, dateRegistered) 
                     VALUES (?,?,?,?, TO_DATE(?, 'DD/MM/YYYY'))";
      $stmt = $conn->prepare($sql_insert);
-     $stmt->bindValue(1, $firstName);
+     echo "STMT: $stmt";
+     /*$stmt->bindValue(1, $firstName);
      $stmt->bindValue(2, $lastName);
      $stmt->bindValue(3, $isComing);
      $stmt->bindValue(4, $message);
      $stmt->bindValue(5, $dateRegistered);     
-     $stmt->execute();
+     $stmt->execute();*/
 
      echo "First: $firstName </br>";
      echo "Last: $lastName </br>";
