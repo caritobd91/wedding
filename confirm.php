@@ -31,7 +31,7 @@ catch(Exception $e){
      echo $stmt->rowCount();
     $result = $stmt -> fetch(PDO::FETCH_ASSOC);
     $previousDate = $result['dateRegistered'];
-    echo "<h3>You've already registered on  $firstName</h3>";
+    echo "<h3>You've already registered on $previousDate $firstName</h3>";
 
     /*if(!($stmt->rowCount() > 0))
     {
@@ -51,7 +51,7 @@ catch(Exception $e){
     else {
         $result = $stmt -> fetch(PDO::FETCH_ASSOC);
         $previousDate = $result['dateRegistered'];
-        echo "<h3>You've already registered on  $firstName</h3>";
+        echo "<h3>You've already registered on $previousDate $firstName</h3>";
     }
 */
      echo "First: $firstName </br>";
