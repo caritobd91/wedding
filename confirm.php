@@ -30,10 +30,9 @@ catch(Exception $e){
     $stmt->execute();
     $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
     $count = count($result);
-    print("Found $count rows.");
-    print_r($result);
 
-    /*if(!($stmt->rowCount() > 0))
+    //If no records exist
+    if(!($count > 0))
     {
         // Insert data
         $sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message, dateRegistered) 
@@ -48,12 +47,12 @@ catch(Exception $e){
 
         echo "<h3>Thanks for confirming on $dateRegistered, $firstName!</h3>";
     }
+    //Person already registered
     else {
-        $result = $stmt -> fetch(PDO::FETCH_ASSOC);
-        $previousDate = $result['dateRegistered'];
+        $previousDate = $result[0]['dateRegistered'];
         echo "<h3>You've already registered on $previousDate $firstName</h3>";
     }
-*/
+
      echo "First: $firstName </br>";
      echo "Last: $lastName </br>";
      echo "Coming?: $isComing </br>";
