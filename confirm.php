@@ -32,6 +32,7 @@ catch(Exception $e){
      $stmt->bindValue(2, $lastName);
      $stmt->bindValue(3, $isComing);
      $stmt->bindValue(4, $message);
+     $stmt->bindValue(5, $dateRegistered);     
      $stmt->execute();
 
      echo "First: $firstName </br>";
