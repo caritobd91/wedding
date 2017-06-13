@@ -38,8 +38,8 @@ catch(Exception $e){
         $sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message, dateRegistered) 
                         VALUES (:firstName, :lastName, :isComing, :message, :dateRegistered)";
         $stmt = $conn->prepare($sql_insert);
-        //$stmt->bindValue(':firstName', $firstName);
-        //$stmt->bindValue(':lastName', $lastName);
+        $stmt->bindValue(':firstName', $firstName);
+        $stmt->bindValue(':lastName', $lastName);
         $stmt->bindValue(':isComing', $isComing);
         $stmt->bindValue(':message', $message);
         $stmt->bindValue(':dateRegistered', $dateRegistered);
