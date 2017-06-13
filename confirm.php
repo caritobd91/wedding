@@ -51,7 +51,7 @@ catch(Exception $e){
     else {
         print_r($result);
         $previousDate = $result[0]['DateRegistered'];
-        echo "<h3>You've already registered on $previousDate $firstName</h3>";
+        echo "<h3>$firstName, it looks like you've already registered on $previousDate</h3>";
     }
 
      echo "First: $firstName </br>";
