@@ -1,9 +1,9 @@
 html {
 	background: url("../img/bkg_image.jpg") no-repeat 10% 10% fixed; 
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 h1 {
@@ -35,6 +35,7 @@ p {
     text-align: center;
     width: 100%;
     position: fixed;
+	z-index: 1;
 }
 
 #navlist li{
