@@ -15,7 +15,7 @@ catch(Exception $e){
 }
 /* SQL Connection */
 
- if(!empty($_POST)) {
+if(!empty($_POST)) {
  try {
     $firstName = $_POST['FirstName'];
     $lastName = $_POST['LastName'];
@@ -49,19 +49,13 @@ catch(Exception $e){
     }
     //Person already registered
     else {
-        print_r($result);
         $previousDate = $result[0]['DateRegistered'];
         echo "<h3>$firstName, it looks like you've already registered on $previousDate</h3>";
     }
-
-     echo "First: $firstName </br>";
-     echo "Last: $lastName </br>";
-     echo "Coming?: $isComing </br>";
-     echo "Comments: $message </br>";
  }
  catch(Exception $e) {
      die(var_dump($e));
      error_log( "Error: $e" );
  }
- }
+}
 ?>
