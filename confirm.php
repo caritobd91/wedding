@@ -26,16 +26,13 @@ catch(Exception $e){
      $dateRegistered = date('m/d/Y');
      // Insert data
      $sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message, dateRegistered) 
-                    VALUES (:firstName,:lastName,:isComing,:message)";
-    echo "Insert $sql_insert";
+                    VALUES (?,?,?,?)";
      $stmt = $conn->prepare($sql_insert);
-     echo "STMT: $stmt";
-     /*$stmt->bindValue(:firstName, $firstName);
-     $stmt->bindValue(:lastName, $lastName);
-     $stmt->bindValue(:isComing, $isComing);
-     $stmt->bindValue(:message, $message);
-     $stmt->bindValue(:dateRegistered, $dateRegistered);     
-     $stmt->execute();*/
+     $stmt->bindValue(1, $firstName);
+     $stmt->bindValue(2, $lastName);
+     $stmt->bindValue(3, $isComing);
+     $stmt->bindValue(4, $message);
+     /*$stmt->execute();*/
 
      echo "First: $firstName </br>";
      echo "Last: $lastName </br>";
