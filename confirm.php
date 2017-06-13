@@ -25,14 +25,14 @@ catch(Exception $e){
      $message = $_POST['Message'];
      $dateRegistered = date('m/d/Y');
      // Insert data
-     /*$sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message, dateRegistered) 
+     $sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message, dateRegistered) 
                     VALUES (?,?,?,?, TO_DATE(?, 'DD/MM/YYYY'))";
      $stmt = $conn->prepare($sql_insert);
      $stmt->bindValue(1, $firstName);
      $stmt->bindValue(2, $lastName);
      $stmt->bindValue(3, $isComing);
      $stmt->bindValue(4, $message);
-     $stmt->execute();*/
+     $stmt->execute();
 
      echo "First: $firstName </br>";
      echo "Last: $lastName </br>";
