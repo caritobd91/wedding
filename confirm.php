@@ -28,8 +28,9 @@ catch(Exception $e){
      $stmt->bindValue(':firstName', $firstName);
      $stmt->bindValue(':lastName', $lastName);
      $stmt->execute();
+     echo $stmt->rowCount();
 
-    if(!($stmt->rowCount() > 0))
+    /*if(!($stmt->rowCount() > 0))
     {
         // Insert data
         $sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message, dateRegistered) 
@@ -49,7 +50,7 @@ catch(Exception $e){
         $previousDate = $result['dateRegistered'];
         echo "<h3>You've already registered on  $firstName</h3>";
     }
-
+*/
      echo "First: $firstName </br>";
      echo "Last: $lastName </br>";
      echo "Coming?: $isComing </br>";
