@@ -22,7 +22,6 @@ catch(Exception $e){
      $lastName = $_POST['LastName'];
      $isComing = ($_POST['RSVP'] == 'Yes' ? 1 : 0);
      $message = $_POST['Message'];
-     echo "$conn";
 
      // Insert data
      $sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message) 
@@ -32,7 +31,6 @@ catch(Exception $e){
      $stmt->bindValue('_lastName', $lastName);
      $stmt->bindValue('_isComing', $isComing);
      $stmt->bindValue('_message', $message);
-     echo "STMT: $stmt";
      $stmt->execute();
 
      echo "First: $firstName </br>";
