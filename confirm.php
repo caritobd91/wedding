@@ -25,7 +25,7 @@ catch(Exception $e){
      $message = $_POST['Message'];
      $dateRegistered = date('m/d/Y');
      // Insert data
-     $sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message) 
+     /*$sql_insert = "INSERT INTO Attendee (firstName, lastName, isComing, message) 
                     VALUES (?,?,?,?)";
      $stmt = $conn->prepare($sql_insert);
      $stmt->bindValue(1, $firstName);
