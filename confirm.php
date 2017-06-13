@@ -41,6 +41,6 @@ catch(Exception $e){
  catch(Exception $e) {
      die(var_dump($e));
  }
- echo "<h3>Thanks for confirming, $firstName!</h3>";
+ echo "<h3>Thanks for confirming, $firstName! We'll see you there!</h3>";
  }
 ?>
