@@ -17,19 +17,19 @@ catch(Exception $e){
 
  if(!empty($_POST)) {
  try {
-     $firstName = $_POST['FirstName'];
-     $lastName = $_POST['LastName'];
-     $isComing = ($_POST['RSVP'] == 'Yes' ? 1 : 0);
-     $message = $_POST['Message'];
-     $dateRegistered = date('m/d/Y');
+    $firstName = $_POST['FirstName'];
+    $lastName = $_POST['LastName'];
+    $isComing = ($_POST['RSVP'] == 'Yes' ? 1 : 0);
+    $message = $_POST['Message'];
+    $dateRegistered = date('m/d/Y');
 
-     $sql_select = "SELECT TOP 1* FROM Attendee WHERE FirstName = :firstName AND LastName = :lastName";
-     $stmt = $conn->prepare($sql_select);
-     $stmt->bindValue(':firstName', $firstName);
-     $stmt->bindValue(':lastName', $lastName);
-     $stmt->execute();
-     $count = count($stmt->fetchAll());
-    $result = $stmt -> fetch(PDO::FETCH_ASSOC);
+    $sql_select = "SELECT TOP 1* FROM Attendee WHERE FirstName = :firstName AND LastName = :lastName";
+    $stmt = $conn->prepare($sql_select);
+    $stmt->bindValue(':firstName', $firstName);
+    $stmt->bindValue(':lastName', $lastName);
+    $stmt->execute();
+    $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    $count = count($result);
     print("Found $count rows.");
     print_r($result);
 
