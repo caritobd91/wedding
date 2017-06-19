@@ -1,9 +1,9 @@
 html {
 	background: url("../img/bkg_image.jpg") no-repeat 10% 10% fixed; 
-	-webkit-background-size: cover;
+	/*-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+	background-size: cover;*/
 }
 
 h1 {
