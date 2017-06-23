@@ -86,7 +86,7 @@
                 //Person already registered
                 else {
                     $previousDate = $result[0]['DateRegistered'];
-                    echo "<h3>$firstName, it looks like you've already registered on $previousDate</h3>";
+                    echo "<h1>$firstName, it looks like you've already registered on $previousDate</h1>";
                 }
             }
             catch(Exception $e) {
