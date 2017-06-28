@@ -197,4 +197,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
 		width: 100%;
 		padding: 30px 0;
 	}
+		.registrycontent img {
+			width: 100%;
+		}
 }
