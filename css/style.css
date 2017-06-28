@@ -189,4 +189,12 @@ and (-webkit-min-device-pixel-ratio: 2) {
 		width: initial;
 		font-size: larger;
 	}
+	.directions {
+		width: 100%;
+		padding: 30px 0;
+	}
+	.registrycontent {
+		width: 100%;
+		padding: 30px 0;
+	}
 }
