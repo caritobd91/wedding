@@ -12,7 +12,7 @@ catch(Exception $e){
     die(var_dump($e));
 }
 
-$sql_select = "SELECT * FROM [Attendee]";
+$sql_select = "SELECT * FROM [Attendee] ORDER BY [DateRegistered]";
 $stmt = $conn->query($sql_select);
 $registrants = $stmt->fetchAll(); 
 if(count($registrants) > 0) {
@@ -20,11 +20,15 @@ if(count($registrants) > 0) {
     echo "<table>";
     echo "<tr><th>First Name</th>";
     echo "<th>Last Name</th>";
-    echo "<th>Is Attending</th></tr>";
+    echo "<th>Is Attending</th>";
+    echo "<th>Date Registered</th>";
+    echo "<th>Message</th></tr>";
     foreach($registrants as $registrant) {
         echo "<tr><td>".$registrant['FirstName']."</td>";
         echo "<td>".$registrant['LastName']."</td>";
-        echo "<td>".$registrant['IsComing']."</td></tr>";
+        echo "<td>".$registrant['IsComing']."</td>";
+        echo "<td>".$registrant['DateRegistered']."</td>";
+        echo "<td>".$registrant['Message']."</td></tr>";
     }
     echo "</table>";
 } else {
